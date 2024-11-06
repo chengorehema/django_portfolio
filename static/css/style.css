@@ -44,7 +44,7 @@ body {
     background-color: rgb(50, 50, 50);
     padding: 15px 30px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
