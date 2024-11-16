@@ -15,12 +15,18 @@ class Project(models.Model):
 
 class ContactSubmission(models.Model):
     name=models.CharField(max_length=100)
-    email=models.CharField()
-    message=models.CharField()
+    email=models.CharField(max_length=30)
+    message=models.CharField(max_length=400)
     phone_number=models.CharField(max_length=20)
 
     def __str__(self):
         return f"Message from {self.name}"
 
+class Skill(models.Model):
+    name = models.CharField(max_length=100)
+    proficiency = models.IntegerField(help_text="Enter a value between 1 (beginner) and 100 (expert)")
+
+    def __str__(self):
+        return f"{self.name} - {self.proficiency}%"
 
     

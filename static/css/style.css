@@ -29,30 +29,30 @@
     color: bisque;
 } */
 
-* {
+/* * {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     box-sizing: border-box;
-}
+} */
 
 /* Colors */
-h2 {
+/* h2 {
     color: #317070;
-}
+} */
 
 /* Flex Container */
-.flex {
+/* .flex {
     display: flex;
 }
 
 
 body {
     background-color: #ccc1c1;
-}
+} */
 
 /* Navbar */
-#navbar {
+/* #navbar {
     line-height: 4rem;
     position: sticky;
     top: 0;
@@ -63,9 +63,9 @@ body {
     margin-bottom: 1rem;
     justify-content: space-around;
     padding: 20px;
-}
+} */
 
-#navbar ul {
+/* #navbar ul {
     list-style: none;
 }
 
@@ -78,10 +78,10 @@ body {
     padding: 0.5rem 0.4rem;
     color: #fff;
     font-size: 25px;
-}
+} */
 
 /* Contact Section */
-#contact-section {
+/* #contact-section {
     margin-top: 20px;
     gap: 20px;
     padding: 20px;
@@ -90,7 +90,7 @@ body {
 .left-contact img {
     width: 100%;
     max-width: 300px; /* Set max width to control the image size */
-    border-radius: 10px;
+    /* border-radius: 10px;
 }
 
 .left-contact h2, .right-contact h2 {
@@ -138,9 +138,9 @@ form input, form textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-}
+} */
 
-form button {
+/* form button {
     background-color: #e74c3c;
     color: #fff;
     padding: 10px;
@@ -169,8 +169,8 @@ form button {
 .address ul {
     list-style: none;
     padding-left: 0;
-}
-
+} */
+/* 
 .address ul li {
     margin-bottom: 5px;
     font-size: 16px;
@@ -180,7 +180,35 @@ form button {
 .address ul li i {
     margin-right: 10px;
     color: #317070;
+} */ 
+
+
+
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background: #f4f4f4;
+    color: #333;
 }
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.container {
+    max-width: 960px;
+}
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

@@ -1,0 +1,24 @@
+{% load static %}
+
+{% extends 'base.html' %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+<h2>My Projects</h2>
+<div class="row">
+    {% for project in projects %}
+    <div class="col-md-4 mb-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                <p><strong>Technologies:</strong> {{ project.technologies }}</p>
+                <a href="{{ project.github_link }}" class="btn btn-primary" target="_blank">GitHub</a>
+                {% if project.live_link %}
+                <a href="{{ project.live_link }}" class="btn btn-secondary" target="_blank">Live Demo</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

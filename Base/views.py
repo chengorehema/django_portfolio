@@ -23,3 +23,6 @@ def contact(request):
         return render(request, 'contact.html', {'form': form})
 
 
+def projects(request):
+    project_list = Project.objects.all()  # Example: Query all projects
+    return render(request, 'projects.html', {'projects': project_list})
