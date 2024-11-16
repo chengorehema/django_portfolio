@@ -5,33 +5,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/fontawesome.min.css" integrity="sha512-B46MVOJpI6RBsdcU307elYeStF2JKT87SsHZfRSkjVi4/iZ3912zXi45X5/CBr/GbCyLx6M1GQtTKYRd52Jxgw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Contact Page</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMW1zjIoMeGZbIXfflATo1ZqP5zFj6bo8T1CwXB" crossorigin="anonymous">
 </head>
 <body>
     <!-- navbar -->
-     <nav id="navbar">
+    <nav id="navbar" class="flex">
 
         <div class="left-nav">
+
             <h3>PORTFOLIO <i class="fas fa-cat" style="color: #fff; font-size: 20px;"></i></h3>
             
         </div>
         
-        <div class="right-nav">
-        
-        <ul>
-            <li><a href="home">Home <i class="fa-solid fa-house" style="color: #fff; font-size: 20px;"></i></a></li>
-            <li><a href="about">About <i class="fa-solid fa-user" style="color: #fff; font-size: 20px;"></i></a></li>
-            <li><a href="skills">Skills <i class="fa-solid fa-code" style="color: #fff; font-size: 20px;"></i></a></li>
-            <li><a href="project">Project <i class="fa-solid fa-project-diagram" style="color: #fff; font-size: 20px;"></i></a></li>
-            <li><a href="contact">Contact <i class="fa-solid fa-rocket" style="color: #fff; font-size: 20px;"></i></a></li>
-        </ul>
+       <div class="right-nav">
+
+            <ul class="flex">
+
+                <li><a href="home">Home <i class="fas fa-house" style="color: #fff; font-size: 20px;"></i></a></li>
+                <li><a href="about">About <i class="fas fa-user" style="color: #fff; font-size: 20px;"></i></a></li>
+                <li><a href="skills">Skills <i class="fas fa-code" style="color: #fff; font-size: 20px;"></i></a></li>
+                <li><a href="project">Project <i class="fas fa-project-diagram" style="color: #fff; font-size: 20px;"></i></a></li>
+                <li><a href="contact">Contact <i class="fa-solid fa-rocket" style="color: #fff; font-size: 20px;"></i></a>
+                </li></li>
+            </ul>
+            </ul>
         </div>
      </nav>
 
-
-     
+    <!-- Contact Section -->
+    <section id="contact-section" class="flex">
+        
+        <div class="left-contact">
+            <img src="{% static 'images/contact.png' %}" alt="Contact Image" class="contact-image">
+            <h2>Address Detail</h2>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> Columbia, SC</li>
+                <li><i class="fas fa-map-marker-alt"></i> Isle of Palms, SC</li>
+                <li><i class="fas fa-phone-alt"></i> (803) 500-1475</li>
+                <li><i class="fas fa-envelope"></i> donny@groverwebdesign.com</li>
+            </ul>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+        
+        <div class="right-contact">
+            <h2>Contact Us!</h2>
+            <p>We can’t solve your problem if you don’t tell us about it!</p>
+            <form>
+                <input type="text" name="name" placeholder="Name">
+                <input type="email" name="email" placeholder="Email">
+                <input type="text" name="phone" placeholder="Phone Number">
+                <textarea name="message" placeholder="Message"></textarea>
+                <button type="submit">Free Consultation</button>
+            </form>
+        </div>
+    </section>
 
 
 

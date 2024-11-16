@@ -1,23 +1,25 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-#If you just want to return plain text
-def home(request):
-    return HttpResponse("Welcome to Sankyana!")
+from django.shortcuts import render, redirect
+from .models import Project
+from .forms import ContactForm
 
-# Create your views here.
-##If you want to render an HTML template
-def home (request):
-    return render(request, 'home.html')
-
+def index(request):
+    return render(request, 'index.html')
 
 def about(request):
     return render(request, 'about.html')
 
-def skills(request):
-    return render(request, 'skills.html')
-
-def project(request):
-    return render(request, 'project.html')
+def home(request):
+    projects = Project.objects.all()
+    return render(request, 'projects.html', {'projects': projects})
 
 def contact(request):
-    return render(request, 'contact.html')
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('contact')
+        else:
+            form = ContactForm()
+        return render(request, 'contact.html', {'form': form})
+
+
