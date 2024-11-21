@@ -2,11 +2,20 @@ from django.shortcuts import render, redirect
 from .models import Project
 from .forms import ContactForm
 
-def index(request):
-    return render(request, 'index.html')
 
-def about(request):
-    return render(request, 'about.html')
+def index(request):
+    return render(request, 'base.html')
+def projects(request):
+    return render(request, 'projects.html')
+
+def resume(request):
+    return render(request, 'resume.html')
+
+def services(request):
+    return render(request, 'services.html')
+
+def contact(request):
+    return render(request, 'contact.html')
 
 def home(request):
     projects = Project.objects.all()

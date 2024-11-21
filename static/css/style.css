@@ -1,5 +1,13 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Poppins:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --main-color: #3df0d8;
+    --white-color: #fff;
+    --disabled-color: rgba(255, 255, 255, 0.3);
+}
 
 *{
     margin: 0;
@@ -11,20 +19,16 @@
     font-family: "Poppins", sans-serif;
 }
 
-:root {
-    --bg-color: #1f242d;
-    --second-bg-color: #323946;
-    --main-color: #7cf03d;
-    --white-color: #fff;
-    --disabled-color: #fff3;
-}
-
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 body {
+    background: var(--bg-color);
     color: var(--white-color);
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
 header {
@@ -38,16 +42,20 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .logo {
     font-size: 3rem;
     color: var(--white-color);
     font-weight: 700;
+    text-decoration: none;
 }
 
+
+
 nav a {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--white-color);
     font-weight: 500;
     margin-left: 3.5rem;
@@ -56,88 +64,204 @@ nav a {
 }
 
 nav a:hover,
-nav a:active{
+nav a.active {
     color: var(--main-color);
-}
+ }
 
 #menu-icon {
-    font-size: 4rem;
+    font-size: 3.6rem;
+    color: var(--white-color);
     display: none;
+    cursor: pointer;
 }
 
-section {
+/* section {
     position: absolute;
     width: 100%;
     height: 100%;
     padding: 10rem 9% 2rem;
     background: var(--bg-color);
-}
+} */
 
 .home {
-    background: var(--bg-color) !important;
-    height: 100vh !important;
+    /* background: var(--bg-color); */
+    /* height: 100vh; */
     display: flex;
     align-items: center;
-    gap: 5rem;
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+    /* gap: 5rem; */
+}
+
+.home-detail {
+    max-width: 60rem;
 }
 
 .home-detail h1 {
-    font-size: clamp(3.5rem, 10vh,5.5rem);
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
 }
+
+h1 span {
+    color: #84fab0;
+    font-weight: bold;
+    animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
 
 .home-detail h2 {
     display: inline-block;
     font-size: 3.2rem;
-    margin-top: -1rem;
+    font-weight: 600;
+    margin: 0.5rem 0;
+    }
+
+.typed-text {
+    color: var(--main-color);
 }
 
 .home-detail p {
     font-size: 1.6rem;
-    line-height: 1.6;
-    margin-top: 1rem 0 2.5rem;
+    margin: 2rem 0 4rem;
 }
 
-.home-detail .btn-scl {
+
+
+.btn-scl {
     display: flex;
     align-items: center;
+    gap: 2rem;
 }
 
 .btn {
     display: inline-block;
-    padding: 1rem 3rem;
+    padding: 1.2rem 2.8rem;
     background: var(--main-color);
-    border: .2rem solid var(--main-color);
     border-radius: 4rem;
-    box-shadow: 0 0 1rem var(--main-color);
-    font-size: 1.6rem;
+    box-shadow: 0 0 1rem var(--main-color);        font-size: 1.6rem;
     color: var(--bg-color);
-    font-weight: 500;
-    transition: .5s;
+    font-weight: 600;
+    transition: .5s ease;
+    text-decoration: none;
 }
 
 .btn:hover {
    background: transparent;
    color: var(--main-color);
-   box-shadow: none; 
+   border: .2rem solid var(--main-color); 
 }
 
-.home-detail .btn-scl .scl {
+
+.scl {
     margin-left: 2rem;
 }
 
-.home-detail .btn-scl .scl a {
+.scl a {
     display: inline-flex;
-    padding: .8rem;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
     border: .2rem solid var(--main-color);
     border-radius: 50%;
     font-size: 2rem;
     color: var(--main-color);
-    margin: 0 .8rem;
-    transition: .5s;
+    margin: 0 .5rem;
+    transition: .5s ease;
+    text-decoration: none;
 }
 
-.home-detail .btn-scl .scl a:hover {
+.scl a:hover {
     background: var(--main-color);
     color: var(--bg-color);
     box-shadow: 0 0 1rem var(--main-color);
+}
+
+.home-img .img-box {
+    position: relative;
+    width: 40rem; /* Ensure a fixed square width */
+    height: 40rem; /* Same as width for a perfect circle */
+    border-radius: 50%; /* Makes it circular */
+    overflow: hidden; /* Ensures the image stays within the circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color); /* Optional for the background behind the image */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.home-img .img-box .img-item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%; /* Ensure it stays circular */
+    overflow: hidden;
+}
+
+.home-img .img-box .img-item img {
+    width: 100%; /* Ensure the image fills the container */
+    height: 100%;
+    object-fit: cover; /* Ensures the image scales properly without distortion */
+    border-radius: 50%; /* Ensures the image itself is circular */
+    transition: transform 0.3s ease; /* Add a hover effect */
+}
+
+.home-img .img-box .img-item img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
+
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+    header {
+        padding: 2rem 3%;
+    }
+    .home {
+        padding: 10rem 3% 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        display: none;
+    }
+    nav.active {
+        display: block;
+    }
+    nav a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+}
+
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+    .home-detail h1 {
+        font-size: 4.5rem;
+    }
 }
