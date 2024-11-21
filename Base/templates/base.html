@@ -24,33 +24,98 @@
         </nav>
     </header>
 
-    <!-- home section -->
     <section class="home">
-        <div class="home-detail">
-            <h1>Rehema Kithi</h1>
-            <h2>I'm a <span class="typed-text"></span></h2>
-            <p>Building your dreams with code.</p>
-            <div class="btn-scl">
-                <a href="#" class="btn">Download CV</a>
-                <div class="scl">
-                    <a href="#"><i class='bx bxl-github'></i></a>
-                    <a href="#"><i class='bx bxl-linkedin'></i></a> 
-                    <a href="#"><i class='bx bxl-discord'></i></a>
-                    <a href="#"><i class='bx bxl-youtube'></i></a>
+        <div class="home-container">
+            <!-- Text Section -->
+            <div class="home-detail">
+                <h1>Rehema Kithi</h1>
+                <h2>I'm a <span class="typed-text"></span></h2>
+                <p>Building your dreams with code. Experienced full stack developer proficient in front-end technologies (HTML, CSS, JavaScript, React), back-end development (Node.js, Django), database management (SQL, MongoDB), and version control (Git).</p>
+                <br>
+                <div class="btn-scl">
+                    <a href="#" class="btn">Download CV</a>
+                    <div class="scl">
+                        <a href="#"><i class='bx bxl-github'></i></a>
+                        <a href="#"><i class='bx bxl-linkedin'></i></a> 
+                        <a href="#"><i class='bx bxl-discord'></i></a>
+                        <a href="#"><i class='bx bxl-youtube'></i></a>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Image Section -->
+            <div class="home-img">
+                <div class="img-box">
+                    <div class="img-item">
+                        <img src="{% static 'images/home.jpeg' %}" alt="Profile image of Rehema Kithi">
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div class="home-img">
-            <div class="img-box">
-                <div class="img-item">
-                    <img src="{% static 'images/home.jpeg' %}">
-                </div>
-            </div>
-        </div>
-
     </section>
-   
+    
+    <footer>
+        <div class="footer-content">
+          <div class="footer-left">
+            <p>&copy; 2024 Rehema Kithi. All rights reserved.</p>
+          </div>
+          <div class="footer-right">
+            <ul>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'projects' %}">Projects</a>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      
+      <style>
+        footer {
+          background-color: #2C3E50;
+          color: #ecf0f1;
+          padding: 20px 0;
+          font-family: Arial, sans-serif;
+        }
+      
+        .footer-content {
+          display: flex;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+      
+        .footer-left p {
+          margin: 0;
+          font-size: 14px;
+        }
+      
+        .footer-right ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+        }
+      
+        .footer-right ul {
+          margin: 0 15px;
+          color: #fff!important;
+        }
+      
+        .footer-right ul  a {
+          color: #ecf0f1;
+          text-decoration: none;
+          font-size: 14px;
+          padding-left: 10px;
+        }
+      
+        .footer-right ul a:hover {
+          color: #34dbcd;
+          text-decoration: none;
+        }
+      </style>
+      
+
+
     <script>
         // menu gle
         let menuIcon = document.querySelector('#menu-icon');
