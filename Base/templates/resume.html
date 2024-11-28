@@ -1,0 +1,281 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/resume.css' %}">
+
+</head>
+<body>
+    
+    <header>
+        <a href="#" class="logo">Rehema.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav>
+            <a href="{% url 'index' %}" class="active">Home</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'resume' %}">Resume</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    <section class="resume active">
+        <div class="resume-container">
+            <div class="resume-box">
+                <h2>Why Hire Me</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id libero id ex consectetur tincidunt.</p>
+                <button class="resume-btn active">Experience</button>
+                <button class="resume-btn">Education</button>
+                <button class="resume-btn">Skills</button>
+                <button class="resume-btn">About Me</button>
+            </div>
+
+            <div class="resume-box">
+                <div class="resume-detail experience active">
+                    <h2 class="heading">My <span>Experience</span></h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                          <p class="year">2024 - present</p>
+                          <h3>Frontend Developer</h3>
+                          <p class="company">Abc Corp.</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                        <div class="resume-item">
+                          <p class="year">2023 - 2024</p>
+                          <h3>FullStack Developer</h3>
+                          <p class="company">Google</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                        <div class="resume-item">
+                          <p class="year">2021 - 2022</p>
+                          <h3>Backend Developer</h3>
+                          <p class="company">Youtube</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                        <div class="resume-item">
+                          <p class="year">2020 - 2021</p>
+                          <h3>Frontend Developer</h3>
+                          <p class="company">xyz Corp.</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                        <div class="resume-item">
+                          <p class="year">2029 - 2020</p>
+                          <h3>UI/Ux Designer</h3>
+                          <p class="company">Vill Corp.</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                        <div class="resume-item">
+                          <p class="year">2019 - 2020</p>
+                          <h3>Junior Developer</h3>
+                          <p class="company">Abc Corp.</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="resume-detail education">
+                    <h2 class="heading">My <span>Education</span></h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                    <div class="resume-list">
+                        <div class="resume-item">
+                          <p class="year">2024</p>
+                          <h3>Programming Course</h3>
+                          <p class="company">Sankyana</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                        <div class="resume-item">
+                          <p class="year">2023</p>
+                          <h3>Web Development Bootcap</h3>
+                          <p class="company">Online Course Platform</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                        <div class="resume-item">
+                          <p class="year">2018 - 2021</p>
+                          <h3>Bachelor of Science</h3>
+                          <p class="company">XYZ University</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                        <div class="resume-item">
+                          <p class="year">2018 - 2021</p>
+                          <h3>Bachelor of Science</h3>
+                          <p class="company">XYZ University</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                        <div class="resume-item">
+                          <p class="year">2018 - 2021</p>
+                          <h3>Bachelor of Science</h3>
+                          <p class="company">XYZ University</p>
+                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                        </div>
+
+                      <div class="resume-item">
+                        <p class="year">2017</p>
+                        <h3>Cerificate of Computing</h3>
+                        <p class="company">XYZ</p>
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="resume-detail skills">
+                    <h2 class="heading">My <span>Skills</span></h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                    <div class="resume-list">
+                      <div class="resume-item">
+                        <i class='bx bxl-mongodb'></i>
+                        <span>MongoDB</span>
+                      </div>
+
+                      <div class="resume-item">
+                        <i class='bx bxl-javascript'></i>
+                        <span>JavaScript</span>
+                      </div>
+
+                      <div class="resume-item">
+                        <i class='bx bxl-react'></i>
+                        <span>React.js</span>
+                      </div>
+
+                      <div class="resume-item">
+                        <i class='bx bxl-tailwind-css'></i>
+                        <span>Tailwind CSS</span>
+                      </div>
+
+                      <div class="resume-item">
+                        <i class='bx bxl-html5'></i>
+                        <span>HTML5</span>
+                      </div>
+
+                      <div class="resume-item">
+                        <i class='bx bxl-nodejs'></i>
+                        <span>Node.js</span>
+                      </div>
+
+                    </div>
+                </div>
+
+                <div class="resume-detail about">
+                    <h2 class="heading">About <span>Me</span></h2>
+                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-content">
+          <div class="footer-left">
+            <p>&copy; 2024 Rehema Kithi. All rights reserved.</p>
+          </div>
+          <div class="footer-right">
+            <ul>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'projects' %}">Projects</a>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      
+      <style>
+        footer {
+          background-color: #2C3E50;
+          color: #ecf0f1;
+          padding: 20px 0;
+          font-family: Arial, sans-serif;
+        }
+      
+        .footer-content {
+          display: flex;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+      
+        .footer-left p {
+          margin: 0;
+          font-size: 14px;
+        }
+      
+        .footer-right ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+        }
+      
+        .footer-right ul {
+          margin: 0 15px;
+          color: #fff!important;
+        }
+      
+        .footer-right ul  a {
+          color: #ecf0f1;
+          text-decoration: none;
+          font-size: 14px;
+          padding-left: 10px;
+        }
+      
+        .footer-right ul a:hover {
+          color: #34dbcd;
+          text-decoration: none;
+        }
+      </style>
+      
+
+
+    <script>
+        // menu gle
+        let menuIcon = document.querySelector('#menu-icon');
+        let nav = document.querySelector('nav');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            nav.classList.toggle('active');
+        };
+
+        // Resume buttons functionality
+        const resumeBtns = document.querySelectorAll('.resume-btn');
+
+resumeBtns.forEach((btn) => {
+    btn.addEventListener('click', () => {
+          const resumeDetails = document.querySelectorAll('.resume-detail');
+        
+        resumeBtns.forEach((otherBtn) => {
+            otherBtn.classList.remove('active');
+        });
+        btn.classList.add('active');
+
+        resumeDetail.forEach((detail) => {
+          detail.classList.remove('active');
+    });
+    resumeDetails[idx].classList.add('active');
+});
+
+});
+
+        
+    </script>
+
+</body>
+</html>

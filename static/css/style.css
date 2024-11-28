@@ -259,7 +259,7 @@ h1 span {
     border-radius: 50%; /* Circular border */
     border: 6px solid transparent; /* Transparent base */
     border-bottom: 12px solid var(--main-color); /* Visible bottom rotating arc */
-    animation: rotate-border-bottom 4s linear infinite; /* Smooth bottom arc rotation */
+    animation: rotate-border-bottom 5s linear infinite; /* Smooth bottom arc rotation */
     /* animation-delay: -1s; */
     z-index: 2; /* Ensures it's above the image */
 }

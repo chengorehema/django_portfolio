@@ -1,0 +1,141 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+<body>
+    
+    <header>
+        <a href="#" class="logo">Rehema.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav>
+            <a href="{% url 'index' %}" class="active">Home</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'resume' %}">Resume</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    <section class="contact" id="contact">
+
+        <h1 class="heading"> <span></span>Contact Me </h1>
+        
+        <div class="row">
+        
+            <div class="content">
+        
+                <h3 class="title">contact info</h3>
+
+                <p>Reach out using the listed contact details for inquiries, project discussions, networking opportunities, business opportunities or professional engagements.</p> 
+        
+                <div class="info">
+                    <h3> <i class='bx bx-envelope'></i>rehemachengo001@gmail.com</h3>
+                    <h3> <i class='bx bxs-phone-call'></i>+254 746560833</h3>
+                    <h3> <i class='bx bx-current-location'></i> 62000-00200</h3>
+                </div>
+            </div>
+        
+            <form method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Name" class="box" required>
+                <input type="email" name="email" placeholder="Email" class="box" required>
+                <input type="text" name="subject" placeholder="Subject" class="box">
+                <textarea name="message" cols="30" rows="10" class="box message" placeholder="Message" required></textarea>
+                <br>
+                <button type="submit" class="btn btn-contact"> Send <i class="fas fa-paper-plane"></i></button>
+            </form>
+            
+        </div>
+        </section>
+        
+    
+    <footer>
+        <div class="footer-content">
+          <div class="footer-left">
+            <p>&copy; 2024 Rehema Kithi. All rights reserved.</p>
+          </div>
+          <div class="footer-right">
+            <ul>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'projects' %}">Projects</a>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      
+      <style>
+        footer {
+          background-color: #2C3E50;
+          color: #ecf0f1;
+          padding: 20px 0;
+          font-family: Arial, sans-serif;
+        }
+      
+        .footer-content {
+          display: flex;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+      
+        .footer-left p {
+          margin: 0;
+          font-size: 14px;
+        }
+      
+        .footer-right ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+        }
+      
+        .footer-right ul {
+          margin: 0 15px;
+          color: #fff!important;
+        }
+      
+        .footer-right ul  a {
+          color: #ecf0f1;
+          text-decoration: none;
+          font-size: 14px;
+          padding-left: 10px;
+        }
+      
+        .footer-right ul a:hover {
+          color: #34dbcd;
+          text-decoration: none;
+        }
+      </style>
+      
+
+
+    <script>
+        // menu gle
+        let menuIcon = document.querySelector('#menu-icon');
+        let nav = document.querySelector('nav');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            nav.classList.toggle('active');
+        };
+
+        
+    </script>
+
+</body>
+</html>
+
+
+<!-- contact section starts -->

@@ -1,0 +1,196 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Rehema.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav>
+            <a href="{% url 'index' %}" class="active">Home</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'resume' %}">Resume</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    <section class="services active">
+        <h2 class="heading"><span> Services </span></h2>
+        <div class="services-container">
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-code-alt'></i>
+                    <a href=""><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Web Development</h3>
+                <p>I specialize in creating modern and responsive websites using HTML, CSS, and JavaScript.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bxs-paint'></i>
+                    <a href=""><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>UI/UX Design</h3>
+                <p>I help you design and build user-friendly interfaces for your applications.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bxl-mongodb'></i>
+                    <a href=""><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>Database Management</h3>
+                <p>I help you manage and optimize your database.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bxl-github'></i>
+                    <a href=""><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>DevOps and Deployment</h3>
+                <p>I help you manage and optimize your applications.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bxl-android'></i>
+                    <a href=""><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>App Development</h3>
+                <p>I help you build and deploy your apps.</p>
+            </div>
+
+            <div class="services-box">
+                <div class="icon">
+                    <i class='bx bx-trending-up'></i>
+                    <a href=""><i class='bx bx-arrow-back'></i></a>
+                </div>
+                <h3>SEO</h3>
+                <p>I help you optimize your website for search engines.</p>
+            </div>
+        </div>
+
+
+    </section>
+    
+    
+    
+    <footer>
+        <div class="footer-content">
+          <div class="footer-left">
+            <p>&copy; 2024 Rehema Kithi. All rights reserved.</p>
+          </div>
+          <div class="footer-right">
+            <ul>
+                <a href="{% url 'services' %}">Services</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'projects' %}">Projects</a>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      
+      <style>
+        footer {
+          background-color: #2C3E50;
+          color: #ecf0f1;
+          padding: 20px 0;
+          font-family: Arial, sans-serif;
+        }
+      
+        .footer-content {
+          display: flex;
+          justify-content: space-between;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 20px;
+        }
+      
+        .footer-left p {
+          margin: 0;
+          font-size: 14px;
+        }
+      
+        .footer-right ul {
+          list-style: none;
+          padding: 0;
+          display: flex;
+        }
+      
+        .footer-right ul {
+          margin: 0 15px;
+          color: #fff!important;
+        }
+      
+        .footer-right ul  a {
+          color: var(--white-color);
+          text-decoration: none;
+          font-size: 14px;
+          padding-left: 10px;
+          transition: color 0.3s;
+        }
+      
+        .footer-right ul a:hover {
+          color: var(--main-color);
+          text-decoration: none;
+        }
+      </style>
+      
+
+
+    <script>
+        // menu gle
+        let menuIcon = document.querySelector('#menu-icon');
+        let nav = document.querySelector('nav');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            nav.classList.toggle('active');
+        };
+
+         // Typed Text Effect
+         const typedTextElement = document.querySelector('.typed-text');
+        const texts = ['FullStack Developer', 'Web Developer', 'Software Engineer'];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeText() {
+            const currentText = texts[textIndex];
+            typedTextElement.textContent = isDeleting 
+                ? currentText.slice(0, charIndex - 1)
+                : currentText.slice(0, charIndex + 1);
+
+            charIndex += isDeleting ? -1 : 1;
+
+            if (!isDeleting && charIndex > currentText.length) {
+                isDeleting = true;
+                setTimeout(typeText, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                textIndex = (textIndex + 1) % texts.length;
+                setTimeout(typeText, 500);
+            } else {
+                setTimeout(typeText, isDeleting ? 100 : 200);
+            }
+        }
+
+        typeText();
+    </script>
+
+</body>
+</html>
