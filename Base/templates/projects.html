@@ -1,24 +1,257 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rehema Kithi - Projects</title>
+    
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-{% extends 'base.html' %}
-{% block title %}Projects{% endblock %}
-{% block content %}
-<h2>My Projects</h2>
-<div class="row">
-    {% for project in projects %}
-    <div class="col-md-4 mb-3">
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ project.description }}</p>
-                <p><strong>Technologies:</strong> {{ project.technologies }}</p>
-                <a href="{{ project.github_link }}" class="btn btn-primary" target="_blank">GitHub</a>
-                {% if project.live_link %}
-                <a href="{{ project.live_link }}" class="btn btn-secondary" target="_blank">Live Demo</a>
-                {% endif %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/resume.css' %}">
+    <style>
+        .project-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            margin: 5px;
+            background-color: #b1b0b0;  /* Slightly darker background for contrast */
+            border: 1px solid #007bff;  /* Added border color */
+            border-radius: 4rem;
+            transition: all 0.3s ease;
+            color: #333;  /* Darker text color for readability */
+            font-weight: 600;  /* Added font weight */
+        }
+        .project-btn.active {
+            background-color: #369daf;
+            color: white;
+        }
+        .project-btn:hover {
+            background-color: #369daf;
+            color: white;
+            transform: scale(1.05);
+        }
+        .project-btn i {
+            font-size: 1.2em;
+        }
+        .resume-item {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .resume-detail {
+            display: none;  /* Hide all details by default */
+        }
+        .resume-detail.active {
+            display: block;  /* Show active detail */
+        }
+        .exp-p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        .website-link {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: #369daf;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .website-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <a href="#" class="logo">Rehema.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav>
+            <a href="{% url 'index' %}" class="active">Home</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'resume' %}">Resume</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    <section class="resume active">
+        <div class="resume-container">
+            <div class="resume-box">
+                <h2>My Projects</h2>
+                <p>A showcase of cutting-edge digital solutions that demonstrate technical expertise and creative problem-solving.</p>
+                <div class="project-buttons">
+                    <button class="resume-btn project-btn active">
+                        <i class='bx bx-home-alt'></i> Lee-Yan Smart Properties
+                    </button>
+                    <button class="resume-btn project-btn">
+                        <i class='bx bx-mobile'></i> Bitech Appstore
+                    </button>
+                    <button class="resume-btn project-btn">
+                        <i class='bx bx-travel'></i> Devanca Tours
+                    </button>
+                    <button class="resume-btn project-btn">
+                        <i class='bx bx-pencil'></i> Eazzy Writers
+                    </button>
+                </div>
+            </div>
+
+            <div class="resume-detail skills active">
+                <h2 class="heading">Lee-Yan <span>Smart Properties</span></h2>
+                <div class="resume-list">
+                    <div class="resume-item">
+                        <p class="year">Online Booking Platform</p>
+                        <h3>Full Stack Developer</h3>
+                        <p class="exp-p">
+                            A comprehensive real estate booking platform designed to revolutionize property rental and hotel booking experiences. 
+                            The platform integrates advanced search filters, secure payment gateways, and intuitive user interfaces to simplify property discovery and booking processes.
+                        </p>
+                        <p class="exp-p">
+                            Key Features:
+                            • Advanced property search and filtering
+                            • Real-time availability tracking
+                            • Secure payment integration
+                            • Responsive mobile-first design
+                        </p>
+                        <p class="exp-p">Tech Stack: NextJS, MongoDB, JavaScript, Git, Nginx, TailwindCSS, CSS, HTML, Redux</p>
+                        <a href="https://www.leeyansmartproperties.com" target="_blank" class="website-link">
+                            <i class='bx bx-link-external'></i> Visit Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-detail skills">
+                <h2 class="heading">Bitech <span>Appstore</span></h2>
+                <div class="resume-list">
+                    <div class="resume-item">
+                        <p class="year">Technology Startup</p>
+                        <h3>Junior Full Stack Developer</h3>
+                        <p class="exp-p">
+                            A dynamic technology startup specializing in mobile application and website development. 
+                            Collaborated with cross-functional teams to deliver innovative digital solutions for diverse client needs.
+                        </p>
+                        <p class="exp-p">
+                            Key Responsibilities:
+                            • Developing responsive web and mobile applications
+                            • Implementing scalable backend architectures
+                            • Ensuring cross-platform compatibility
+                            • Conducting code reviews and optimizations
+                        </p>
+                        <p class="exp-p">Tech Stack: NextJS, MongoDB, JavaScript, Git, Nginx, TailwindCSS, CSS, HTML, Redux</p>
+                        <a href="https://www.bitechappstore.com" target="_blank" class="website-link">
+                            <i class='bx bx-link-external'></i> Visit Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-detail skills">
+                <h2 class="heading">Devanca <span>Tours</span></h2>
+                <div class="resume-list">
+                    <div class="resume-item">
+                        <p class="year">Online Booking Platform</p>
+                        <h3>Junior Full Stack Developer</h3>
+                        <p class="exp-p">
+                            An innovative online platform designed to streamline tour and travel bookings, providing users with a comprehensive and user-friendly travel planning experience.
+                        </p>
+                        <p class="exp-p">
+                            Key Features:
+                            • Extensive tour destination database
+                            • Personalized travel recommendations
+                            • Secure booking and payment system
+                            • Interactive travel itinerary planner
+                        </p>
+                        <p class="exp-p">Tech Stack: NextJS, MongoDB, JavaScript, Git, Nginx, TailwindCSS, CSS, HTML, Redux</p>
+                        <a href="https://www.devancatour.com" target="_blank" class="website-link">
+                            <i class='bx bx-link-external'></i> Visit Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="resume-detail skills">
+                <h2 class="heading">Eazzy <span>Writers</span></h2>
+                <div class="resume-list">
+                    <div class="resume-item">
+                        <p class="year">Online Writing Platform</p>
+                        <h3>Junior Full Stack Developer</h3>
+                        <p class="exp-p">
+                            A sophisticated online marketplace connecting professional writers with clients, featuring a robust matching system and seamless communication tools.
+                        </p>
+                        <p class="exp-p">
+                            Key Features:
+                            • Advanced writer-client matching algorithm
+                            • Secure payment and escrow system
+                            • Real-time project tracking
+                            • Comprehensive portfolio and review system
+                        </p>
+                        <p class="exp-p">Tech Stack: Firebase, React, TypeScript, JavaScript, Git, Nginx, TailwindCSS, CSS, HTML, Redux</p>
+                        <a href="https://www.eazzywriters.com" target="_blank" class="website-link">
+                            <i class='bx bx-link-external'></i> Visit Website
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    {% endfor %}
-</div>
-{% endblock %}
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2024 Rehema Kithi. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <a href="{% url 'services' %}">Services</a>
+                    <a href="{% url 'contact' %}">Contact</a>
+                    <a href="{% url 'projects' %}">Projects</a>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu toggle
+        let menuIcon = document.querySelector('#menu-icon');
+        let nav = document.querySelector('nav');
+
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            nav.classList.toggle('active');
+        };
+
+        // Resume buttons functionality
+        const resumeBtns = document.querySelectorAll('.resume-btn');
+        const resumeDetails = document.querySelectorAll('.resume-detail');
+
+        // Ensure first project is active on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            resumeBtns.forEach((btn, idx) => {
+                btn.addEventListener('click', () => {
+                    // Remove 'active' class from all buttons
+                    resumeBtns.forEach((otherBtn) => {
+                        otherBtn.classList.remove('active');
+                    });
+                    // Add 'active' class to the clicked button
+                    btn.classList.add('active');
+
+                    // Hide all resume detail sections
+                    resumeDetails.forEach((detail) => {
+                        detail.classList.remove('active');
+                    });
+                    // Show the corresponding resume detail section
+                    resumeDetails[idx].classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

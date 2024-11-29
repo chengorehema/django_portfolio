@@ -1,6 +1,8 @@
 from django.contrib import admin
 from Base.models import Project, ContactSubmission, Skill
 
+# admin.site.register(ContactSubmission)
+
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ('title', 'technologies')

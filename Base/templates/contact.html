@@ -1,4 +1,4 @@
-
+<!-- 
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +44,10 @@
                     <h3> <i class='bx bx-current-location'></i> 62000-00200</h3>
                 </div>
             </div>
+
+            <div id="overlay"></div>
+
+            <div id="success-dialog" class="dialog-box">Your message has been sent successfully!</div>
         
             <form method="POST" action="{% url 'contact' %}">
                 {% csrf_token %}
@@ -121,21 +125,287 @@
       
 
 
-    <script>
-        // menu gle
+      <script>
+        // Menu Toggle
         let menuIcon = document.querySelector('#menu-icon');
         let nav = document.querySelector('nav');
-
+    
         menuIcon.onclick = () => {
             menuIcon.classList.toggle('bx-x');
             nav.classList.toggle('active');
         };
+    
+        // AJAX Form Submission
+        $(document).ready(function() {
+    $('#contact-form').on('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
 
-        
+        const formData = $(this).serialize(); // Serialize the form data
+
+        $.ajax({
+            type: 'POST',
+            url: '', // Leave blank to use the current page's URL
+            data: formData,
+            success: function(response) {
+                if (response.success) {
+                    // Show the overlay and dialog box
+                    $('#overlay').fadeIn();
+                    $('#success-dialog').fadeIn();
+
+                    // Hide after 3 seconds
+                    setTimeout(() => {
+                        $('#success-dialog').fadeOut();
+                        $('#overlay').fadeOut();
+                    }, 3000);
+
+                    // Clear the form
+                    $('#contact-form')[0].reset();
+                } else {
+                    alert(response.message); // Show error message
+                }
+            },
+            error: function() {
+                alert('An error occurred. Please try again.');
+            }
+        });
+    });
+});
+
+
     </script>
+    
 
 </body>
-</html>
+</html> -->
 
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    
+    <style>
+        /* Success Dialog Modal Styles */
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #success-dialog {
+            display: none;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
+
+        #success-dialog .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #888;
+        }
+
+        #success-dialog h2 {
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        #success-dialog p {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Footer styles remain the same as in the original code */
+        footer {
+            background-color: #2C3E50;
+            color: #ecf0f1;
+            padding: 20px 0;
+            font-family: Arial, sans-serif;
+        }
+    
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    
+        .footer-left p {
+            margin: 0;
+            font-size: 14px;
+        }
+    
+        .footer-right ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+    
+        .footer-right ul {
+            margin: 0 15px;
+            color: #fff!important;
+        }
+    
+        .footer-right ul  a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 14px;
+            padding-left: 10px;
+        }
+    
+        .footer-right ul a:hover {
+            color: #34dbcd;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Rehema.</a>
+        <i class='bx bx-menu' id="menu-icon"></i>
+        <nav>
+            <a href="{% url 'index' %}" class="active">Home</a>
+            <a href="{% url 'services' %}">Services</a>
+            <a href="{% url 'resume' %}">Resume</a>
+            <a href="{% url 'projects' %}">Projects</a>
+            <a href="{% url 'contact' %}">Contact</a>
+        </nav>
+    </header>
+
+    <section class="contact" id="contact">
+        <h1 class="heading"> <span></span>Contact Me </h1>
+        
+        <div class="row">
+            <div class="content">
+                <h3 class="title">contact info</h3>
+                <p>Reach out using the listed contact details for inquiries, project discussions, networking opportunities, business opportunities or professional engagements.</p> 
+        
+                <div class="info">
+                    <h3> <i class='bx bx-envelope'></i>rehemachengo001@gmail.com</h3>
+                    <h3> <i class='bx bxs-phone-call'></i>+254 746560833</h3>
+                    <h3> <i class='bx bx-current-location'></i> 62000-00200</h3>
+                </div>
+            </div>
+        
+            <form id="contact-form" method="POST" action="{% url 'contact' %}">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Name" class="box" required>
+                <input type="email" name="email" placeholder="Email" class="box" required>
+                <input type="text" name="subject" placeholder="Subject" class="box">
+                <textarea name="message" cols="30" rows="10" class="box message" placeholder="Message" required></textarea>
+                <br>
+                <button type="submit" class="btn btn-contact"> Send <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Success Dialog Modal -->
+    <div id="overlay">
+        <div id="success-dialog">
+            <button class="close-btn">&times;</button>
+            <h2>Message Sent Successfully!</h2>
+            <p>Thank you for reaching out. I'll get back to you soon.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>&copy; 2024 Rehema Kithi. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <a href="{% url 'services' %}">Services</a>
+                    <a href="{% url 'contact' %}">Contact</a>
+                    <a href="{% url 'projects' %}">Projects</a>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        let menuIcon = document.querySelector('#menu-icon');
+        let nav = document.querySelector('nav');
+    
+        menuIcon.onclick = () => {
+            menuIcon.classList.toggle('bx-x');
+            nav.classList.toggle('active');
+        };
+    
+        // AJAX Form Submission
+        $(document).ready(function() {
+            $('#contact-form').on('submit', function(e) {
+                e.preventDefault(); // Prevent the default form submission
+
+                const formData = $(this).serialize(); // Serialize the form data
+
+                $.ajax({
+                    type: 'POST',
+                    url: '', // Leave blank to use the current page's URL
+                    data: formData,
+                    success: function(response) {
+                        if (response.success) {
+                            // Show the overlay and dialog box
+                            $('#overlay').css('display', 'flex');
+                            $('#success-dialog').fadeIn();
+
+                            // Clear the form
+                            $('#contact-form')[0].reset();
+                        } else {
+                            alert(response.message); // Show error message
+                        }
+                    },
+                    error: function() {
+                        alert('An error occurred. Please try again.');
+                    }
+                });
+            });
+
+            // Close dialog when close button is clicked
+            $('.close-btn').on('click', function() {
+                $('#success-dialog').fadeOut();
+                $('#overlay').fadeOut();
+            });
+
+            // Close dialog when clicking outside of it
+            $('#overlay').on('click', function(e) {
+                if (e.target === this) {
+                    $('#success-dialog').fadeOut();
+                    $('#overlay').fadeOut();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
 
 <!-- contact section starts -->

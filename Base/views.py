@@ -1,9 +1,9 @@
-from django.shortcuts import render, redirect
+
+from django.http import JsonResponse
+from django.shortcuts import render
 from .models import Project
 from .forms import ContactForm
-import logging
 
-logger = logging.getLogger(__name__)
 
 # Index view
 def index(request):
@@ -24,17 +24,22 @@ def services(request):
 
 # Contact view
 def contact(request):
-    logger.info("Contact view accessed")  # Logging for debugging
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():
-            form.save()  # Save the form data
-            return redirect('contact')  # Redirect to the same contact page (or another page if desired)
-    else:
-        form = ContactForm()  # Initialize an empty form
+            form.save()  # Save the form data to the database
+            # Return a JSON response if it's an AJAX request
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'success': True, 'message': 'Your message has been sent successfully!'})
+        else:
+            # Return error response for invalid form if it's AJAX
+            if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+                return JsonResponse({'success': False, 'message': 'Form is invalid. Please try again.'})
+
+    # Handle GET request by rendering the contact form
+    form = ContactForm()
     return render(request, 'contact.html', {'form': form})
 
-# Home view (if needed)
 def home(request):
     return render(request, 'base.html')
 

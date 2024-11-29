@@ -10,7 +10,15 @@
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/resume.css' %}">
-
+    <style>
+        /* New style to make resume items display vertically */
+        .resume-item-vertical {
+            display: block!important;
+            width: 100%!important;
+            margin-bottom: 20px!important; /* Add some spacing between vertical items */
+            height: 100%!important;
+        }
+    </style>
 </head>
 <body>
     
@@ -30,222 +38,184 @@
         <div class="resume-container">
             <div class="resume-box">
                 <h2>Why Hire Me</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id libero id ex consectetur tincidunt.</p>
+                <p>I bring a unique combination of technical expertise, creative problem-solving skills, and a passion for continuous learning.</p>
                 <button class="resume-btn active">Experience</button>
                 <button class="resume-btn">Education</button>
                 <button class="resume-btn">Skills</button>
                 <button class="resume-btn">About Me</button>
             </div>
 
-            <div class="resume-box">
-                <div class="resume-detail experience active">
-                    <h2 class="heading">My <span>Experience</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                          <p class="year">2024 - present</p>
-                          <h3>Frontend Developer</h3>
-                          <p class="company">Abc Corp.</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
+            <div class="resume-detail experience active">
+                <h2 class="heading">My <span>Experience</span></h2>
+                <div class="resume-list">
+                    <div class="resume-item resume-item-vertical">
+                        <p class="year">2024 -  Present</p>
+                        <h3>Senior Frontend Developer</h3>
+                        <p class="company">Bitechappstore</p>
+                        <p class="exp-p">Contributed to the design and implementation of user-centric and responsive web applications using modern technologies.</p>
+                        <p class="exp-p">Assisted in developing dynamic single-page applications using JavaScript (ES6), HTML5, and CSS3, focusing on performance optimization and SEO best practices.</p>
+                        <p class="exp-p">Developed scalable and reusable UI components using Vue.js and SCSS, ensuring cross-browser compatibility and accessibility compliance.</p>
+                    </div>
 
-                        <div class="resume-item">
-                          <p class="year">2023 - 2024</p>
-                          <h3>FullStack Developer</h3>
-                          <p class="company">Google</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
-
-                        <div class="resume-item">
-                          <p class="year">2021 - 2022</p>
-                          <h3>Backend Developer</h3>
-                          <p class="company">Youtube</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
-
-                        <div class="resume-item">
-                          <p class="year">2020 - 2021</p>
-                          <h3>Frontend Developer</h3>
-                          <p class="company">xyz Corp.</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
-
-                        <div class="resume-item">
-                          <p class="year">2029 - 2020</p>
-                          <h3>UI/Ux Designer</h3>
-                          <p class="company">Vill Corp.</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
-
-                        <div class="resume-item">
-                          <p class="year">2019 - 2020</p>
-                          <h3>Junior Developer</h3>
-                          <p class="company">Abc Corp.</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
-
+                    <div class="resume-item resume-item-vertical">
+                        <p class="year">2020 - 2023</p>
+                        <h3>Junior FullStack Developer(Part time)</h3>
+                        <p class="company">Kuhenza for the Children</p>
+                        <p class="exp-p">Gained hands-on experience in web development by building responsive web pages using Bootstrap, jQuery, and Git for version control, under the mentorship of senior developers.</p>
+                        <p class="exp-p">Collaborated with product managers and designers to translate wireframes into interactive prototypes using Figma and Angular, optimizing for mobile-first designs.</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="resume-detail education">
-                    <h2 class="heading">My <span>Education</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-                    <div class="resume-list">
-                        <div class="resume-item">
-                          <p class="year">2024</p>
-                          <h3>Programming Course</h3>
-                          <p class="company">Sankyana</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
+            <div class="resume-detail education">
+                <h2 class="heading">My <span>Education</span></h2>
+                <div class="resume-list">
+                    <div class="resume-item resume-item-vertical">
+                        <p class="year">2024</p>
+                        <h3>FullStack Development</h3>
+                        <p class="company">Sankyana Consultancy</p>
+                        <p class="exp-p">Completed comprehensive full stack web development certification.</p>
+                    </div>
 
-                        <div class="resume-item">
-                          <p class="year">2023</p>
-                          <h3>Web Development Bootcap</h3>
-                          <p class="company">Online Course Platform</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
+                    <div class="resume-item resume-item-vertical">
+                        <p class="year">2020 - 2024</p>
+                        <h3>Bsc. Statistics</h3>
+                        <p class="company">JKUAT</p>
+                        <p class="exp-p">Graduated with Second Class Upper Honors.</p>
+                    </div>
 
-                        <div class="resume-item">
-                          <p class="year">2018 - 2021</p>
-                          <h3>Bachelor of Science</h3>
-                          <p class="company">XYZ University</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
+                    <div class="resume-item resume-item-vertical">
+                        <p class="year">2024</p>
+                        <h3>AI Career Essentials</h3>
+                        <p class="company">ALX</p>
+                        <p class="exp-p">Completed a certification in AI Career Essentials.</p>
+                    </div>
 
-                        <div class="resume-item">
-                          <p class="year">2018 - 2021</p>
-                          <h3>Bachelor of Science</h3>
-                          <p class="company">XYZ University</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
+                    <div class="resume-item resume-item-vertical">
+                        <p class="year">2020</p>
+                        <h3>Software Development</h3>
+                        <p class="company">Moringa School</p>
+                        <p class="exp-p">Graduated with a certificate in software development.</p>
+                    </div>
 
-                        <div class="resume-item">
-                          <p class="year">2018 - 2021</p>
-                          <h3>Bachelor of Science</h3>
-                          <p class="company">XYZ University</p>
-                          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                        </div>
-
-                      <div class="resume-item">
-                        <p class="year">2017</p>
-                        <h3>Cerificate of Computing</h3>
-                        <p class="company">XYZ</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptas atque voluptates itaque tenetur pariatur quas.</p>
-                      </div>
+                    <div class="resume-item resume-item-vertical">
+                        <p class="year">2016 - 2019</p>
+                        <h3>Kenya Certificate of Secondary Education</h3>
+                        <p class="company">Lugulu High School</p>
+                        <p class="exp-p">Successfully completed the Kenya Certificate of Secondary Education (KCSE).</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="resume-detail skills">
-                    <h2 class="heading">My <span>Skills</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-                    <div class="resume-list">
-                      <div class="resume-item">
+            <div class="resume-detail skills">
+                <h2 class="heading">My <span>Skills</span></h2>
+                <div class="resume-list">
+                    <div class="resume-item resume-item-vertical">
                         <i class='bx bxl-mongodb'></i>
                         <span>MongoDB</span>
-                      </div>
+                    </div>
 
-                      <div class="resume-item">
+                    <div class="resume-item resume-item-vertical">
                         <i class='bx bxl-javascript'></i>
                         <span>JavaScript</span>
-                      </div>
+                    </div>
 
-                      <div class="resume-item">
+                    <div class="resume-item resume-item-vertical">
                         <i class='bx bxl-react'></i>
                         <span>React.js</span>
-                      </div>
+                    </div>
 
-                      <div class="resume-item">
+                    <div class="resume-item resume-item-vertical">
                         <i class='bx bxl-tailwind-css'></i>
                         <span>Tailwind CSS</span>
-                      </div>
+                    </div>
 
-                      <div class="resume-item">
+                    <div class="resume-item resume-item-vertical">
                         <i class='bx bxl-html5'></i>
                         <span>HTML5</span>
-                      </div>
-
-                      <div class="resume-item">
-                        <i class='bx bxl-nodejs'></i>
-                        <span>Node.js</span>
-                      </div>
-
                     </div>
-                </div>
 
-                <div class="resume-detail about">
-                    <h2 class="heading">About <span>Me</span></h2>
-                    <p class="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi.</p>
-                    
+                    <div class="resume-item resume-item-vertical">
+                      <i class='bx bxl-firebase'></i>
+                        <span>Firebase</span>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                      <i class='bx bxl-nodejs'></i>
+                      <span>Node.js</span>
+                  </div>
+
+                  <div class="resume-item resume-item-vertical">
+                    <i class='bx bxl-typescript'></i>
+                    <span>TypeScript</span>
+                </div>
+                </div>
+            </div>
+
+            <div class="resume-detail about">
+                <h2 class="heading">About <span>Me</span></h2>
+                <div class="resume-list">
+                    <div class="resume-item resume-item-vertical">
+                        <p>Name<span>Rehema Kithi</span></p>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                        <p>Gender<span>Female</span></p>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                        <p>Age<span>21 Years</span></p>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                        <p>Status<span>Single</span></p>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                        <p>City<span>Nairobi</span></p>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                        <p>Nationality<span>Kenyan</span></p>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                        <p>Experience<span>3+ Years</span></p>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                        <p>Full Time<span>Available</span></p>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                        <p>Freelance<span>Available</span></p>
+                    </div>
+
+                    <div class="resume-item resume-item-vertical">
+                        <p>Email<span>rehemachengo001@gmail.com</span></p>
+                    </div>
                 </div>
             </div>
         </div>
-
     </section>
 
     <footer>
         <div class="footer-content">
-          <div class="footer-left">
-            <p>&copy; 2024 Rehema Kithi. All rights reserved.</p>
-          </div>
-          <div class="footer-right">
-            <ul>
-                <a href="{% url 'services' %}">Services</a>
-                <a href="{% url 'contact' %}">Contact</a>
-                <a href="{% url 'projects' %}">Projects</a>
-            </ul>
-          </div>
+            <div class="footer-left">
+                <p>&copy; 2024 Rehema Kithi. All rights reserved.</p>
+            </div>
+            <div class="footer-right">
+                <ul>
+                    <a href="{% url 'services' %}">Services</a>
+                    <a href="{% url 'contact' %}">Contact</a>
+                    <a href="{% url 'projects' %}">Projects</a>
+                </ul>
+            </div>
         </div>
-      </footer>
-      
-      <style>
-        footer {
-          background-color: #2C3E50;
-          color: #ecf0f1;
-          padding: 20px 0;
-          font-family: Arial, sans-serif;
-        }
-      
-        .footer-content {
-          display: flex;
-          justify-content: space-between;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 0 20px;
-        }
-      
-        .footer-left p {
-          margin: 0;
-          font-size: 14px;
-        }
-      
-        .footer-right ul {
-          list-style: none;
-          padding: 0;
-          display: flex;
-        }
-      
-        .footer-right ul {
-          margin: 0 15px;
-          color: #fff!important;
-        }
-      
-        .footer-right ul  a {
-          color: #ecf0f1;
-          text-decoration: none;
-          font-size: 14px;
-          padding-left: 10px;
-        }
-      
-        .footer-right ul a:hover {
-          color: #34dbcd;
-          text-decoration: none;
-        }
-      </style>
-      
-
+    </footer>
 
     <script>
-        // menu gle
+        // Menu toggle
         let menuIcon = document.querySelector('#menu-icon');
         let nav = document.querySelector('nav');
 
@@ -256,26 +226,25 @@
 
         // Resume buttons functionality
         const resumeBtns = document.querySelectorAll('.resume-btn');
+        const resumeDetails = document.querySelectorAll('.resume-detail');
 
-resumeBtns.forEach((btn) => {
-    btn.addEventListener('click', () => {
-          const resumeDetails = document.querySelectorAll('.resume-detail');
-        
-        resumeBtns.forEach((otherBtn) => {
-            otherBtn.classList.remove('active');
+        resumeBtns.forEach((btn, idx) => {
+            btn.addEventListener('click', () => {
+                // Remove 'active' class from all buttons
+                resumeBtns.forEach((otherBtn) => {
+                    otherBtn.classList.remove('active');
+                });
+                // Add 'active' class to the clicked button
+                btn.classList.add('active');
+
+                // Hide all resume detail sections
+                resumeDetails.forEach((detail) => {
+                    detail.classList.remove('active');
+                });
+                // Show the corresponding resume detail section
+                resumeDetails[idx].classList.add('active');
+            });
         });
-        btn.classList.add('active');
-
-        resumeDetail.forEach((detail) => {
-          detail.classList.remove('active');
-    });
-    resumeDetails[idx].classList.add('active');
-});
-
-});
-
-        
     </script>
-
 </body>
 </html>
