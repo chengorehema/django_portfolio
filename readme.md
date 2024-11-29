@@ -19,14 +19,14 @@ Personal portfolio website made with Django framework in the backend, and with C
 
 ![image](https://user-images.githubusercontent.com/104616403/210331817-c266db91-fcfa-40e2-99ad-8c857c55051d.png)
 
-![image](https://user-images.githubusercontent.com/104616403/210332043-779ddac8-b1a7-4414-b5bd-ebe67d4200df.png)
-![image](https://user-images.githubusercontent.com/104616403/210332104-4a4556c7-5583-43bc-b39a-bc62b6b5e367.png)
+![image](/static/images/contact.png)
+![image](h/static/images/contact.png)
 
-![image](https://user-images.githubusercontent.com/104616403/210332171-190afc75-9174-4ffa-b9d2-3541b5fd0ebb.png)
+![image](/static/images/contact.png)
 
-![image](https://user-images.githubusercontent.com/104616403/210332226-cbfbe6e5-732d-4442-9aae-218b6e6292b0.png)
+![image](/static/images/contact.png)
 
-![image](https://user-images.githubusercontent.com/104616403/210332284-9d69c838-ab8e-4e71-ac6b-2f0ed514561a.png)
+![image](/static/images/contact.png)
 
 
 
@@ -35,10 +35,10 @@ Personal portfolio website made with Django framework in the backend, and with C
 
 
 ## 🛠 Skills
-Javascript, HTML, CSS, python, Django, Bootstrap...
+Javascript, HTML, CSS, Figma, TypeScript, Nextjs, Reactjs, python, Django, Bootstrap...
 
 
-# Hi, I'm Mohammad Burhan! 👋
+# Hi, I'm Rehema Chengo! 👋
 
 
 ## 🚀 About Me
@@ -47,7 +47,7 @@ I'm a full stack developer...
 
 ## Feedback
 
-If you have any feedback, please reach out to us at burhanmohammad1234@out.com
+If you have any feedback, please reach out to us at rehemachengo001@gmail.com
 
 
 ## Tech Stack
@@ -62,7 +62,7 @@ If you have any feedback, please reach out to us at burhanmohammad1234@out.com
 Clone the project
 
 ```bash
-  git clone https://github.com/BurhanMohammad/Django-portfilio-website.git
+  git clone https://github.com/chengorehema/django_portfolio.git
 ```
 
 Go to the project directory
@@ -91,4 +91,4 @@ Start the server
 
 ## Authors
 
-- [@Mohammad Burhan](https://github.com/BurhanMohammad)
+- [@Rehema Chengo](https://github.com/chengorehema)
