@@ -11,24 +11,28 @@ Personal portfolio website made with Django framework in the backend, and with C
 
 
 ## Demo
-<!-- [![Video Preview](path/to/thumbnail.jpg)](/static/images/video.webm) -->
-<video width="640" height="480" controls>
+[![Video Preview]](/static/images/video.webm)
+<!-- <video width="640" height="480" controls>
   <source src="/static/images/video.webm" type="video/webm">
-</video>
+</video> -->
 
 
 ## Screenshots
 
-![image](/static/images/video.webm)
+![image](/static/images/home.png)
 
-![image](/static/images/contact.png)
-![image](h/static/images/contact.png)
+![image](/static/images/services.png)
+![image](/static/images/exprience.png)
 
-![image](/static/images/contact.png)
+![image](/static/images/education.png)
 
-![image](/static/images/contact.png)
+![image](/static/images/skills.png)
 
-![image](/static/images/contact.png)
+![image](/static/images/about.png)
+
+![image](/static/images/projects.png)
+
+![image](/static/images/contacts.png)
 
 
 
