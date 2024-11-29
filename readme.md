@@ -11,10 +11,10 @@ Personal portfolio website made with Django framework in the backend, and with C
 
 
 ## Demo
-[![Video Preview](path/to/thumbnail.jpg)](/static/images/video.webm)
-<!-- <video width="640" height="480" controls>
+<!-- [![Video Preview](path/to/thumbnail.jpg)](/static/images/video.webm) -->
+<video width="640" height="480" controls>
   <source src="/static/images/video.webm" type="video/webm">
-</video> -->
+</video>
 
 
 ## Screenshots
